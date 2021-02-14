@@ -1,0 +1,43 @@
+extends layout 
+
+block content
+  h1 Hello my name is #{name}
+  p my mobile number is #{mobile}
+  ul 
+    each x in test
+      li= x
+  
+  - var stores = ['S1', 'S2']
+   ul 
+    each s in stores 
+      li= s
+
+  mixin fetch(param)
+    ul 
+      each city in param 
+        li= city
+    
+  mixin fetch(cities)
+
+
+  h1 Multi line Test
+  ul 
+   li. 
+    this is my 
+    multi line text 
+   li.red another text
+
+   input(type=text).red#myInput
+
+   h1 Condition 
+   if isRaining 
+    p It is raining...
+
+  h1 How to declare variables 
+  - var condition = true 
+  - var anyArray = [1,2,3]
+  if condition 
+   p condition is true
+  each i in anyArray 
+   ul 
+    li= i
